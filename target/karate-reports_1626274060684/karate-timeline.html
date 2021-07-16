@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/resources\/Features\/get[1:6]","start":1626273134200,"end":1626273144622,"title":"src\/test\/resources\/Features\/get[1:6] 09:32:14.200-09:32:24.622 Get API call 1"},{"id":2,"group":1,"content":"src\/test\/resources\/Features\/get[2:16]","start":1626273144634,"end":1626273145149,"title":"src\/test\/resources\/Features\/get[2:16] 09:32:24.634-09:32:25.149 Get API with background"},{"id":3,"group":1,"content":"src\/test\/resources\/Features\/get[3:26]","start":1626273145161,"end":1626273145258,"title":"src\/test\/resources\/Features\/get[3:26] 09:32:25.161-09:32:25.258 Get API call with path and response"},{"id":4,"group":1,"content":"src\/test\/resources\/Features\/get[4:36]","start":1626273145283,"end":1626273145371,"title":"src\/test\/resources\/Features\/get[4:36] 09:32:25.283-09:32:25.371 Get API with path and param"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

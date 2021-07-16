@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Features\/get[1:6]","start":1626371912443,"end":1626371912564,"title":"Features\/get[1:6] 12:58:32.443-12:58:32.564 Get API call 1"},{"id":2,"group":1,"content":"Features\/get[2:16]","start":1626371912579,"end":1626371912663,"title":"Features\/get[2:16] 12:58:32.579-12:58:32.663 Get API with background"},{"id":3,"group":1,"content":"Features\/get[3:26]","start":1626371912677,"end":1626371912749,"title":"Features\/get[3:26] 12:58:32.677-12:58:32.749 Get API call with path and response"},{"id":4,"group":1,"content":"Features\/get[4:36]","start":1626371912761,"end":1626371912868,"title":"Features\/get[4:36] 12:58:32.761-12:58:32.868 Get API with path and param"},{"id":5,"group":1,"content":"Features\/get[5:47]","start":1626371912878,"end":1626371913001,"title":"Features\/get[5:47] 12:58:32.878-12:58:33.001 Get API with Assertions"},{"id":6,"group":1,"content":"Features\/delete[1:3]","start":1626371905885,"end":1626371910690,"title":"Features\/delete[1:3] 12:58:25.885-12:58:30.690 Delete api"},{"id":7,"group":1,"content":"Features\/put[1:2]","start":1626371916705,"end":1626371917068,"title":"Features\/put[1:2] 12:58:36.705-12:58:37.068 Put Demo 1"},{"id":8,"group":1,"content":"Features\/users[1:7]","start":1626371917228,"end":1626371917336,"title":"Features\/users[1:7] 12:58:37.228-12:58:37.336 Test Get Api call"},{"id":9,"group":1,"content":"Features\/users[2:13]","start":1626371917342,"end":1626371917345,"title":"Features\/users[2:13] 12:58:37.342-12:58:37.345 Config Demo"},{"id":10,"group":1,"content":"Features\/post[1:9]","start":1626371913645,"end":1626371914260,"title":"Features\/post[1:9] 12:58:33.645-12:58:34.260 POST API call with request"},{"id":11,"group":1,"content":"Features\/post[2:16]","start":1626371914280,"end":1626371914660,"title":"Features\/post[2:16] 12:58:34.280-12:58:34.660 POST API call with background"},{"id":12,"group":1,"content":"Features\/post[3:23]","start":1626371914667,"end":1626371915119,"title":"Features\/post[3:23] 12:58:34.667-12:58:35.119 POST API call with payload body"},{"id":13,"group":1,"content":"Features\/post[4:31]","start":1626371915126,"end":1626371915522,"title":"Features\/post[4:31] 12:58:35.126-12:58:35.522 POST API call reading response from file"},{"id":14,"group":1,"content":"Features\/post[5:40]","start":1626371915528,"end":1626371915891,"title":"Features\/post[5:40] 12:58:35.528-12:58:35.891 POST API call reading request from file"},{"id":15,"group":1,"content":"Features\/post[6:52]","start":1626371915900,"end":1626371916277,"title":"Features\/post[6:52] 12:58:35.900-12:58:36.277 POST API call changing request from file","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
