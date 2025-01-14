@@ -53,4 +53,4 @@ Feature: GET Api Demo
     And match response.data[0].first_name != null
     And match $.data[4].id == 11
     And assert response.data.length == 6
-    And match $.data[2].last_name == 'Funke'
+    And match $.data[2].last_name == ' '
